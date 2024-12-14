@@ -124,7 +124,7 @@ use syn::{Data, DataStruct, DeriveInput};
 /// ```
 #[proc_macro_error]
 #[proc_macro_derive(Hcaptcha, attributes(captcha, remoteip, sitekey))]
-pub fn hcaptcha_derive(input: TokenStream) -> TokenStream {
+pub fn hcaptcha_derive_no_wasm(input: TokenStream) -> TokenStream {
     // Construct a representation of Rust code as a syntax tree
     // that we can manipulate
     let ast = syn::parse(input).unwrap();

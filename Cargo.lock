@@ -805,7 +805,7 @@ dependencies = [
  "async-trait",
  "chrono",
  "claims",
- "hcaptcha_derive",
+ "hcaptcha_derive_no_wasm",
  "hex",
  "itertools",
  "lambda_runtime",
@@ -832,7 +832,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "hcaptcha_derive"
+name = "hcaptcha_derive_no_wasm"
 version = "3.0.0"
 dependencies = [
  "hcaptcha-no-wasm",
@@ -2463,7 +2463,7 @@ dependencies = [
  "claims",
  "env_logger",
  "hcaptcha-no-wasm",
- "hcaptcha_derive",
+ "hcaptcha_derive_no_wasm",
  "hex",
  "itertools",
  "mockd",
@@ -2482,7 +2482,7 @@ dependencies = [
  "claims",
  "env_logger",
  "hcaptcha-no-wasm",
- "hcaptcha_derive",
+ "hcaptcha_derive_no_wasm",
  "hex",
  "itertools",
  "mockd",
@@ -2501,7 +2501,7 @@ dependencies = [
  "claims",
  "env_logger",
  "hcaptcha-no-wasm",
- "hcaptcha_derive",
+ "hcaptcha_derive_no_wasm",
  "hex",
  "itertools",
  "mockd",
@@ -2520,7 +2520,7 @@ dependencies = [
  "claims",
  "env_logger",
  "hcaptcha-no-wasm",
- "hcaptcha_derive",
+ "hcaptcha_derive_no_wasm",
  "hex",
  "itertools",
  "mockd",
@@ -2539,7 +2539,7 @@ dependencies = [
  "claims",
  "env_logger",
  "hcaptcha-no-wasm",
- "hcaptcha_derive",
+ "hcaptcha_derive_no_wasm",
  "hex",
  "itertools",
  "mockd",
@@ -2558,7 +2558,7 @@ dependencies = [
  "claims",
  "env_logger",
  "hcaptcha-no-wasm",
- "hcaptcha_derive",
+ "hcaptcha_derive_no_wasm",
  "hex",
  "itertools",
  "mockd",

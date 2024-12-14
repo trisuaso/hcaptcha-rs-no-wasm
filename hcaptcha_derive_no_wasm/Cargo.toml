@@ -1,15 +1,15 @@
 [package]
-name = "hcaptcha_derive"
+name = "hcaptcha_derive_no_wasm"
 version = "3.0.0"
 edition = "2018"
 description = """
-Derive macro for hCaptcha. Please use hcaptcha crate.
+Derive macro for hCaptcha. Please use hcaptcha-no-wasm crate.
 """
 authors = ["Jeremiah Russell <jrussell@jerus.ie>"]
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/jerusdp/hcaptcha-rs"
 readme = "README.md"
-documentation = "https://docs.rs/hcaptcha_derive"
+documentation = "https://docs.rs/hcaptcha_derive_no_wasm"
 categories = ["web-programming"]
 keywords = ["hcaptcha", "captcha", "security", "backend", "protection"]
 include = [
@@ -22,7 +22,7 @@ include = [
 ]
 
 [lib]
-name = "hcaptcha_derive"
+name = "hcaptcha_derive_no_wasm"
 proc-macro = true
 
 [dependencies]

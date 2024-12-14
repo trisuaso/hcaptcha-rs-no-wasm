@@ -3,7 +3,7 @@ resolver = "2"
 members = [
     "hcaptcha-no-wasm",
     "hcaptcha-cli",
-    "hcaptcha_derive",
+    "hcaptcha_derive_no_wasm",
     "test-suite-default",
     "test-suite-enterprise",
     "test-suite-native-only",

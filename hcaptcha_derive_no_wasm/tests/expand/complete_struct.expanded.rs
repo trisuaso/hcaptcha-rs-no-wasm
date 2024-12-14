@@ -1,4 +1,4 @@
-use hcaptcha_derive::Hcaptcha;
+use hcaptcha_derive_no_wasm::Hcaptcha;
 pub struct ContactForm {
     name: String,
     #[allow(dead_code)]

@@ -297,4 +297,4 @@ pub use request::Request;
 pub use response::Response;
 
 pub use crate::hcaptcha::Hcaptcha;
-pub use hcaptcha_derive::*;
+pub use hcaptcha_derive_no_wasm::*;

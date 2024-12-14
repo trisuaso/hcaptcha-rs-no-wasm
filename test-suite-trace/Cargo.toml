@@ -19,7 +19,7 @@ hcaptcha-no-wasm = { path = "../hcaptcha-no-wasm", features = [
     "trace",
     "enterprise",
 ] }
-hcaptcha_derive = { path = "../hcaptcha_derive" }
+hcaptcha_derive_no_wasm = { path = "../hcaptcha_derive_no_wasm" }
 itertools.workspace = true
 mockd.workspace = true
 rand.workspace = true

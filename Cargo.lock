@@ -800,7 +800,7 @@ dependencies = [
 
 [[package]]
 name = "hcaptcha-no-wasm"
-version = "3.0.0"
+version = "3.0.1"
 dependencies = [
  "async-trait",
  "chrono",
@@ -833,7 +833,7 @@ dependencies = [
 
 [[package]]
 name = "hcaptcha_derive_no_wasm"
-version = "3.0.0"
+version = "3.0.1"
 dependencies = [
  "hcaptcha-no-wasm",
  "macrotest",

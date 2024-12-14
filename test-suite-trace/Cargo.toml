@@ -15,7 +15,10 @@ chrono.workspace = true
 claims.workspace = true
 env_logger.workspace = true
 hex.workspace = true
-hcaptcha = { path = "../hcaptcha", features = ["trace", "enterprise"] }
+hcaptcha-no-wasm = { path = "../hcaptcha-no-wasm", features = [
+    "trace",
+    "enterprise",
+] }
 hcaptcha_derive = { path = "../hcaptcha_derive" }
 itertools.workspace = true
 mockd.workspace = true

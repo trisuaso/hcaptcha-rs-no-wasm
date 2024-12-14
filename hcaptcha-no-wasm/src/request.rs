@@ -3,9 +3,9 @@
 //! # Example
 //!
 //! ```
-//!     use hcaptcha::Request;
+//!     use hcaptcha_no_wasm::Request;
 //! # #[tokio::main]
-//! # async fn main() -> Result<(), hcaptcha::Error> {
+//! # async fn main() -> Result<(), hcaptcha_no_wasm::Error> {
 //!     let secret = get_your_secret();         // your secret key
 //!     let captcha = get_captcha();            // user's response token
 //!     let sitekey = get_your_sitekey();     // your site key
@@ -19,7 +19,7 @@
 //! # fn get_your_secret() -> String {
 //! #   "0x123456789abcde0f123456789abcdef012345678".to_string()
 //! # }
-//! # use hcaptcha::Captcha;
+//! # use hcaptcha_no_wasm::Captcha;
 //! # use rand::distributions::Alphanumeric;
 //! # use rand::{thread_rng, Rng};
 //! # use std::iter;
@@ -82,8 +82,8 @@ impl Request {
     /// # Example
     ///
     /// ``` no_run
-    ///     use hcaptcha::Request;
-    /// # fn main() -> Result<(), hcaptcha::Error>{
+    ///     use hcaptcha_no_wasm::Request;
+    /// # fn main() -> Result<(), hcaptcha_no_wasm::Error>{
     ///     let secret = get_your_secret();     // your secret key
     ///     let captcha = get_captcha();        // captcha with response token
     ///
@@ -93,7 +93,7 @@ impl Request {
     /// # fn get_your_secret() -> String {
     /// #   "0x123456789abcde0f123456789abcdef012345678".to_string()
     /// # }
-    /// # use hcaptcha::Captcha;
+    /// # use hcaptcha_no_wasm::Captcha;
     /// # use rand::distributions::Alphanumeric;
     /// # use rand::{thread_rng, Rng};
     /// # use std::iter;
@@ -152,8 +152,8 @@ impl Request {
     /// # Example
     ///
     /// ``` no_run
-    ///     use hcaptcha::Request;
-    /// # fn main() -> Result<(), hcaptcha::Error>{
+    ///     use hcaptcha_no_wasm::Request;
+    /// # fn main() -> Result<(), hcaptcha_no_wasm::Error>{
     ///     let secret = get_your_secret();     // your secret key
     ///     let response = get_response();    // Hcaptcha client response
     ///
@@ -201,9 +201,9 @@ impl Request {
     ///
     /// # Example
     /// ``` no_run
-    ///     use hcaptcha::Request;
+    ///     use hcaptcha_no_wasm::Request;
     /// # #[tokio::main]
-    /// # async fn main() -> Result<(), hcaptcha::Error> {
+    /// # async fn main() -> Result<(), hcaptcha_no_wasm::Error> {
     ///     let secret = get_your_secret();         // your secret key
     ///     let response = get_response();          // user's response token
     ///     let remoteip = get_remoteip_address();    // user's ip address
@@ -215,7 +215,7 @@ impl Request {
     /// # fn get_your_secret() -> String {
     /// #   "0x123456789abcde0f123456789abcdef012345678".to_string()
     /// # }
-    /// # use hcaptcha::Captcha;
+    /// # use hcaptcha_no_wasm::Captcha;
     /// # use rand::distributions::Alphanumeric;
     /// # use rand::{thread_rng, Rng};
     /// # use std::iter;
@@ -262,9 +262,9 @@ impl Request {
     /// # Example
     /// Create a new request and set the sitekey field in the request.
     /// ```
-    ///     use hcaptcha::Request;
+    ///     use hcaptcha_no_wasm::Request;
     /// # #[tokio::main]
-    /// # async fn main() -> Result<(), hcaptcha::Error> {
+    /// # async fn main() -> Result<(), hcaptcha_no_wasm::Error> {
     ///     let secret = get_your_secret();     // your secret key
     ///     let captcha = get_captcha();        // captcha
     ///     let sitekey = get_your_sitekey();   // your site key
@@ -276,7 +276,7 @@ impl Request {
     /// # fn get_your_secret() -> String {
     /// #   "0x123456789abcde0f123456789abcdef012345678".to_string()
     /// # }
-    /// # use hcaptcha::Captcha;
+    /// # use hcaptcha_no_wasm::Captcha;
     /// # use rand::distributions::Alphanumeric;
     /// # use rand::{thread_rng, Rng};
     /// # use std::iter;

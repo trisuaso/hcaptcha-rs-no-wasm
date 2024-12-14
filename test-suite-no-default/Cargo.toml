@@ -14,7 +14,7 @@ trace = []
 chrono.workspace = true
 claims.workspace = true
 env_logger.workspace = true
-hcaptcha = { path = "../hcaptcha", default-features = false }
+hcaptcha-no-wasm = { path = "../hcaptcha-no-wasm", default-features = false }
 hcaptcha_derive = { path = "../hcaptcha_derive" }
 hex.workspace = true
 itertools.workspace = true

@@ -3,7 +3,7 @@ mod param;
 mod record;
 mod send;
 
-use hcaptcha::Hcaptcha;
+use hcaptcha_no_wasm::Hcaptcha;
 use lambda_runtime::{Error, LambdaEvent};
 use serde::{Deserialize, Serialize};
 use tokio::join;

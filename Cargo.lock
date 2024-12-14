@@ -788,7 +788,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bf151400ff0baff5465007dd2f3e717f3fe502074ca563069ce3a6629d07b289"
 
 [[package]]
-name = "hcaptcha"
+name = "hcaptcha-cli"
+version = "0.4.10"
+dependencies = [
+ "clap",
+ "clap-verbosity-flag",
+ "color-eyre",
+ "hcaptcha-no-wasm",
+ "tokio",
+]
+
+[[package]]
+name = "hcaptcha-no-wasm"
 version = "3.0.0"
 dependencies = [
  "async-trait",
@@ -821,33 +832,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "hcaptcha-cli"
-version = "0.4.10"
-dependencies = [
- "clap",
- "clap-verbosity-flag",
- "color-eyre",
- "hcaptcha",
- "tokio",
-]
-
-[[package]]
-name = "hcaptcha-wasm"
-version = "0.3.9"
-dependencies = [
- "claims",
- "hcaptcha",
- "hcaptcha_derive",
- "wasm-bindgen",
- "wasm-bindgen-futures",
- "wasm-bindgen-test",
-]
-
-[[package]]
 name = "hcaptcha_derive"
 version = "3.0.0"
 dependencies = [
- "hcaptcha",
+ "hcaptcha-no-wasm",
  "macrotest",
  "proc-macro-error2",
  "proc-macro2",
@@ -1437,16 +1425,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6877bb514081ee2a7ff5ef9de3281f14a4dd4bceac4c09388074a6b5df8a139a"
 
 [[package]]
-name = "minicov"
-version = "0.3.7"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f27fe9f1cc3c22e1687f9446c2083c4c5fc7f0bcf1c7a86bdbded14985895b4b"
-dependencies = [
- "cc",
- "walkdir",
-]
-
-[[package]]
 name = "miniz_oxide"
 version = "0.7.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1471,7 +1449,7 @@ name = "mock-verifier"
 version = "0.3.9"
 dependencies = [
  "chrono",
- "hcaptcha",
+ "hcaptcha-no-wasm",
  "rocket",
  "serde",
  "serde_json",
@@ -2187,15 +2165,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f3cb5ba0dc43242ce17de99c180e96db90b235b8a9fdc9543c96d2209116bd9f"
 
 [[package]]
-name = "same-file"
-version = "1.0.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "93fc1dc3aaa9bfed95e02e6eadabb4baf7e3078b0bd1b4d7b6b0b68378900502"
-dependencies = [
- "winapi-util",
-]
-
-[[package]]
 name = "schannel"
 version = "0.1.27"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2493,7 +2462,7 @@ dependencies = [
  "chrono",
  "claims",
  "env_logger",
- "hcaptcha",
+ "hcaptcha-no-wasm",
  "hcaptcha_derive",
  "hex",
  "itertools",
@@ -2512,7 +2481,7 @@ dependencies = [
  "chrono",
  "claims",
  "env_logger",
- "hcaptcha",
+ "hcaptcha-no-wasm",
  "hcaptcha_derive",
  "hex",
  "itertools",
@@ -2531,7 +2500,7 @@ dependencies = [
  "chrono",
  "claims",
  "env_logger",
- "hcaptcha",
+ "hcaptcha-no-wasm",
  "hcaptcha_derive",
  "hex",
  "itertools",
@@ -2550,7 +2519,7 @@ dependencies = [
  "chrono",
  "claims",
  "env_logger",
- "hcaptcha",
+ "hcaptcha-no-wasm",
  "hcaptcha_derive",
  "hex",
  "itertools",
@@ -2569,7 +2538,7 @@ dependencies = [
  "chrono",
  "claims",
  "env_logger",
- "hcaptcha",
+ "hcaptcha-no-wasm",
  "hcaptcha_derive",
  "hex",
  "itertools",
@@ -2588,7 +2557,7 @@ dependencies = [
  "chrono",
  "claims",
  "env_logger",
- "hcaptcha",
+ "hcaptcha-no-wasm",
  "hcaptcha_derive",
  "hex",
  "itertools",
@@ -2598,18 +2567,6 @@ dependencies = [
  "tokio",
  "trybuild",
  "wiremock",
-]
-
-[[package]]
-name = "test-wasm"
-version = "0.3.9"
-dependencies = [
- "claims",
- "hcaptcha",
- "hcaptcha_derive",
- "wasm-bindgen",
- "wasm-bindgen-futures",
- "wasm-bindgen-test",
 ]
 
 [[package]]
@@ -3095,7 +3052,6 @@ checksum = "f8c5f0a0af699448548ad1a2fbf920fb4bee257eae39953ba95cb84891a0446a"
 dependencies = [
  "atomic 0.6.0",
  "getrandom",
- "wasm-bindgen",
 ]
 
 [[package]]
@@ -3115,16 +3071,6 @@ name = "version_check"
 version = "0.9.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0b928f33d975fc6ad9f86c8f283853ad26bdd5b10b7f1542aa2fa15e2289105a"
-
-[[package]]
-name = "walkdir"
-version = "2.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "29790946404f91d9c5d06f9874efddea1dc06c5efe94541a7d6863108e3a5e4b"
-dependencies = [
- "same-file",
- "winapi-util",
-]
 
 [[package]]
 name = "want"
@@ -3207,31 +3153,6 @@ name = "wasm-bindgen-shared"
 version = "0.2.99"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "943aab3fdaaa029a6e0271b35ea10b72b943135afe9bffca82384098ad0e06a6"
-
-[[package]]
-name = "wasm-bindgen-test"
-version = "0.3.49"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c61d44563646eb934577f2772656c7ad5e9c90fac78aa8013d776fcdaf24625d"
-dependencies = [
- "js-sys",
- "minicov",
- "scoped-tls",
- "wasm-bindgen",
- "wasm-bindgen-futures",
- "wasm-bindgen-test-macro",
-]
-
-[[package]]
-name = "wasm-bindgen-test-macro"
-version = "0.3.49"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "54171416ce73aa0b9c377b51cc3cb542becee1cd678204812e8392e5b0e4a031"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn",
-]
 
 [[package]]
 name = "web-sys"

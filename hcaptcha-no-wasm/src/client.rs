@@ -11,16 +11,16 @@
 //! # Examples
 //! Create client to connect to default API endpoint.
 //! ```
-//!     use hcaptcha::Client;
+//!     use hcaptcha_no_wasm::Client;
 //!     let client = Client::new();
 //! ```
 //!
 //! Create a client and submit for verification.
 //!```no_run
-//!     use hcaptcha::{Captcha, Client, Request};
+//!     use hcaptcha_no_wasm::{Captcha, Client, Request};
 //!
 //! # #[tokio::main]
-//! # async fn main() -> Result<(), hcaptcha::Error> {
+//! # async fn main() -> Result<(), hcaptcha_no_wasm::Error> {
 //! #   let secret = get_your_secret();
 //! #   let captcha = dummy_captcha();
 //! #   let request = Request::new(&secret, captcha)?; // <- returns error
@@ -61,8 +61,6 @@ use crate::Error;
 use crate::Request;
 use crate::Response;
 use reqwest::Url;
-// #[cfg(target_arch = "wasm32")]
-// use tokio::runtime;
 
 mod form;
 
@@ -96,7 +94,7 @@ impl Client {
     /// # Example
     /// Initialise client to connect to default API endpoint.
     /// ```
-    ///     use hcaptcha::Client;
+    ///     use hcaptcha_no_wasm::Client;
     ///     let client = Client::new();
     /// ```
     /// # Panic
@@ -119,7 +117,7 @@ impl Client {
     /// # Example
     /// Initialise client to connect to custom Hcaptcha API
     /// ```
-    ///     use hcaptcha::Client;
+    ///     use hcaptcha_no_wasm::Client;
     ///     use url::Url;
     ///
     ///     let url = "https://domain.com/siteverify";
@@ -140,8 +138,8 @@ impl Client {
     /// # Example
     /// Initialise client to connect to custom Hcaptcha API
     /// ```no_run
-    /// # fn main() -> Result<(), hcaptcha::Error> {
-    ///     use hcaptcha::Client;
+    /// # fn main() -> Result<(), hcaptcha_no_wasm::Error> {
+    ///     use hcaptcha_no_wasm::Client;
     ///     use url::Url;
     ///
     ///     let url = "https://domain.com/siteverify";
@@ -174,13 +172,13 @@ impl Client {
     ///
     ///
     ///  ```no_run
-    ///     use hcaptcha::{Client, Request};
-    /// # use hcaptcha::Captcha;
+    ///     use hcaptcha_no_wasm::{Client, Request};
+    /// # use hcaptcha_no_wasm::Captcha;
     /// # use rand::distributions::Alphanumeric;
     /// # use rand::{thread_rng, Rng};
     /// # use std::iter;
     /// # #[tokio::main]
-    /// # async fn main() -> Result<(), hcaptcha::Error> {
+    /// # async fn main() -> Result<(), hcaptcha_no_wasm::Error> {
     ///     let secret = get_your_secret(); // your secret key
     ///     let captcha = get_captcha();  // user's token
     ///
@@ -273,13 +271,13 @@ impl Client {
     ///
     ///
     ///  ```no_run
-    ///     use hcaptcha::{Client, Request};
-    /// # use hcaptcha::Captcha;
+    ///     use hcaptcha_no_wasm::{Client, Request};
+    /// # use hcaptcha_no_wasm::Captcha;
     /// # use rand::distributions::Alphanumeric;
     /// # use rand::{thread_rng, Rng};
     /// # use std::iter;
     /// # #[tokio::main]
-    /// # async fn main() -> Result<(), hcaptcha::Error> {
+    /// # async fn main() -> Result<(), hcaptcha_no_wasm::Error> {
     ///     let secret = get_your_secret(); // your secret key
     ///     let captcha = get_captcha();  // user's token
     ///

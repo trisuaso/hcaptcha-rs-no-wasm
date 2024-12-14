@@ -1,6 +1,6 @@
 use claims::assert_ok;
-use hcaptcha::Error;
-use hcaptcha::Hcaptcha;
+use hcaptcha_no_wasm::Error;
+use hcaptcha_no_wasm::Hcaptcha;
 
 #[derive(Debug, Hcaptcha)]
 pub struct Test {

@@ -71,7 +71,7 @@ pub enum Code {
     /// A false report can be worked around by dropping the `ext` feature.
     ///
     /// ```toml
-    /// hcaptcha = {version = "2.3.0", default-features = false, features = [rustls-backend]}
+    /// hcaptcha-no-wasm = {version = "2.3.0", default-features = false, features = [rustls-backend]}
     /// ```
     SecretVersionUnknown,
     /// Collect any new error codes issued by the API.

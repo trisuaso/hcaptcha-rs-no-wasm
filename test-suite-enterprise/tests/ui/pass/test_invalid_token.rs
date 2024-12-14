@@ -1,7 +1,7 @@
 mod helper;
 
 use chrono::{TimeDelta, Utc};
-use hcaptcha::{Code, Hcaptcha};
+use hcaptcha_no_wasm::{Code, Hcaptcha};
 use serde_json::json;
 use wiremock::matchers::{body_string, method, path};
 use wiremock::{Mock, MockServer, ResponseTemplate};
@@ -62,7 +62,7 @@ async fn main() {
 
     if let Err(codes) = response {
         match codes {
-            hcaptcha::Error::Codes(hash_set) => {
+            hcaptcha_no_wasm::Error::Codes(hash_set) => {
                 assert_eq!(hash_set.len(), 1);
                 assert!(hash_set.contains(&Code::MissingResponse));
             }

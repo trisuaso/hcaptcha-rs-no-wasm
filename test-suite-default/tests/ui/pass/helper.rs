@@ -1,4 +1,4 @@
-use hcaptcha::Captcha;
+use hcaptcha_no_wasm::Captcha;
 use rand::distributions::Alphanumeric;
 use rand::{thread_rng, Rng};
 use std::iter;

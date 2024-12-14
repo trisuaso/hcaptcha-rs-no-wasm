@@ -1,6 +1,6 @@
 use claims::assert_ok;
-use hcaptcha::Error;
-use hcaptcha::Hcaptcha;
+use hcaptcha_no_wasm::Error;
+use hcaptcha_no_wasm::Hcaptcha;
 
 const BOT: &str = "30000000-ffff-ffff-ffff-000000000003";
 const SAFE: &str = "20000000-ffff-ffff-ffff-000000000002";

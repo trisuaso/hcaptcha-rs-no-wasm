@@ -3,9 +3,9 @@
 //! ## Example
 //!
 //! ```no_run
-//! #   use hcaptcha::{Request, Client};
+//! #   use hcaptcha_no_wasm::{Request, Client};
 //! # #[tokio::main]
-//! # async fn main() -> Result<(), hcaptcha::Error> {
+//! # async fn main() -> Result<(), hcaptcha_no_wasm::Error> {
 //! # let request = Request::new(
 //! #    "0x123456789abcedf0123456789abcdef012345678",
 //! #    get_captcha(),
@@ -34,7 +34,7 @@
 //!
 //! # Ok(())
 //! # }
-//! # use hcaptcha::Captcha;
+//! # use hcaptcha_no_wasm::Captcha;
 //! # use rand::distributions::Alphanumeric;
 //! # use rand::{thread_rng, Rng};
 //! # use std::iter;
@@ -196,9 +196,9 @@ impl Response {
     ///
     /// # Example
     /// ```no_run
-    /// #   use hcaptcha::{Request, Client};
+    /// #   use hcaptcha_no_wasm::{Request, Client};
     /// # #[tokio::main]
-    /// # async fn main() -> Result<(), hcaptcha::Error> {
+    /// # async fn main() -> Result<(), hcaptcha_no_wasm::Error> {
     /// # let request = Request::new(
     /// #    "0x123456789abcedf0123456789abcdef012345678",
     /// #    get_captcha(),
@@ -208,7 +208,7 @@ impl Response {
     ///     println!("Success returns true: {}", response.success());
     /// # Ok(())
     /// # }
-    /// # use hcaptcha::Captcha;
+    /// # use hcaptcha_no_wasm::Captcha;
     /// # use rand::distributions::Alphanumeric;
     /// # use rand::{thread_rng, Rng};
     /// # use std::iter;
@@ -237,9 +237,9 @@ impl Response {
     ///
     /// # Example
     /// ```no_run
-    /// #   use hcaptcha::{Request, Client};
+    /// #   use hcaptcha_no_wasm::{Request, Client};
     /// # #[tokio::main]
-    /// # async fn main() -> Result<(), hcaptcha::Error> {
+    /// # async fn main() -> Result<(), hcaptcha_no_wasm::Error> {
     /// # let request = Request::new(
     /// #    "0x123456789abcedf0123456789abcdef012345678",
     /// #    get_captcha(),
@@ -252,7 +252,7 @@ impl Response {
     ///     };
     /// # Ok(())
     /// # }
-    /// # use hcaptcha::Captcha;
+    /// # use hcaptcha_no_wasm::Captcha;
     /// # use rand::distributions::Alphanumeric;
     /// # use rand::{thread_rng, Rng};
     /// # use std::iter;
@@ -281,9 +281,9 @@ impl Response {
     ///
     /// # Example
     /// ```no_run
-    /// #   use hcaptcha::{Request, Client};
+    /// #   use hcaptcha_no_wasm::{Request, Client};
     /// # #[tokio::main]
-    /// # async fn main() -> Result<(), hcaptcha::Error> {
+    /// # async fn main() -> Result<(), hcaptcha_no_wasm::Error> {
     /// # let request = Request::new(
     /// #    "0x123456789abcedf0123456789abcdef012345678",
     /// #    get_captcha(),
@@ -296,7 +296,7 @@ impl Response {
     ///     };
     /// # Ok(())
     /// # }
-    /// # use hcaptcha::Captcha;
+    /// # use hcaptcha_no_wasm::Captcha;
     /// # use rand::distributions::Alphanumeric;
     /// # use rand::{thread_rng, Rng};
     /// # use std::iter;
@@ -325,9 +325,9 @@ impl Response {
     ///
     /// # Example
     /// ```no_run
-    /// #   use hcaptcha::{Request, Client};
+    /// #   use hcaptcha_no_wasm::{Request, Client};
     /// # #[tokio::main]
-    /// # async fn main() -> Result<(), hcaptcha::Error> {
+    /// # async fn main() -> Result<(), hcaptcha_no_wasm::Error> {
     /// # let request = Request::new(
     /// #    "0x123456789abcedf0123456789abcdef012345678",
     /// #    get_captcha(),
@@ -341,7 +341,7 @@ impl Response {
     ///
     /// # Ok(())
     /// # }
-    /// # use hcaptcha::Captcha;
+    /// # use hcaptcha_no_wasm::Captcha;
     /// # use rand::distributions::Alphanumeric;
     /// # use rand::{thread_rng, Rng};
     /// # use std::iter;
@@ -370,9 +370,9 @@ impl Response {
     ///
     /// # Example
     /// ```no_run
-    /// #   use hcaptcha::{Request, Client};
+    /// #   use hcaptcha_no_wasm::{Request, Client};
     /// # #[tokio::main]
-    /// # async fn main() -> Result<(), hcaptcha::Error> {
+    /// # async fn main() -> Result<(), hcaptcha_no_wasm::Error> {
     /// # let request = Request::new(
     /// #    "0x123456789abcedf0123456789abcdef012345678",
     /// #    get_captcha(),
@@ -386,7 +386,7 @@ impl Response {
     ///
     /// # Ok(())
     /// # }
-    /// # use hcaptcha::Captcha;
+    /// # use hcaptcha_no_wasm::Captcha;
     /// # use rand::distributions::Alphanumeric;
     /// # use rand::{thread_rng, Rng};
     /// # use std::iter;
@@ -415,9 +415,9 @@ impl Response {
     ///
     /// # Example
     /// ```no_run
-    /// #   use hcaptcha::{Request, Client};
+    /// #   use hcaptcha_no_wasm::{Request, Client};
     /// # #[tokio::main]
-    /// # async fn main() -> Result<(), hcaptcha::Error> {
+    /// # async fn main() -> Result<(), hcaptcha_no_wasm::Error> {
     /// # let request = Request::new(
     /// #    "0x123456789abcedf0123456789abcdef012345678",
     /// #    get_captcha(),
@@ -431,7 +431,7 @@ impl Response {
     ///
     /// # Ok(())
     /// # }
-    /// # use hcaptcha::Captcha;
+    /// # use hcaptcha_no_wasm::Captcha;
     /// # use rand::distributions::Alphanumeric;
     /// # use rand::{thread_rng, Rng};
     /// # use std::iter;
@@ -462,9 +462,9 @@ impl Response {
     ///
     /// # Example
     /// ```no_run
-    /// #   use hcaptcha::{Request, Client};
+    /// #   use hcaptcha_no_wasm::{Request, Client};
     /// # #[tokio::main]
-    /// # async fn main() -> Result<(), hcaptcha::Error> {
+    /// # async fn main() -> Result<(), hcaptcha_no_wasm::Error> {
     /// # let request = Request::new(
     /// #    "0x123456789abcedf0123456789abcdef012345678",
     /// #    get_captcha(),
@@ -478,7 +478,7 @@ impl Response {
     ///
     /// # Ok(())
     /// # }
-    /// # use hcaptcha::Captcha;
+    /// # use hcaptcha_no_wasm::Captcha;
     /// # use rand::distributions::Alphanumeric;
     /// # use rand::{thread_rng, Rng};
     /// # use std::iter;

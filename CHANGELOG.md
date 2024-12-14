@@ -594,7 +594,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - *Notes**
 - Validation of builder inputs*
 
-Validation of secret and response inputs makes hcaptcha::new(secret, response) fallible. The function returns a result to address any validation failure.
+Validation of secret and response inputs makes hcaptcha_no_wasm::new(secret, response) fallible. The function returns a result to address any validation failure.
 
 Basic validation for both inputs ensures that the value is not empty or composed of only whitespace.
 

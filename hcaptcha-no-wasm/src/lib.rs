@@ -22,11 +22,11 @@
 //! Token needs to be supplied by the client.
 //! This example will fail as a client-provided token is not used.
 //! ```no_run
-//!     use hcaptcha::{Client, Request};
+//!     use hcaptcha_no_wasm::{Client, Request};
 //! # use itertools::Itertools;
 //!
 //! # #[tokio::main]
-//! # async fn main() -> Result<(), hcaptcha::Error> {
+//! # async fn main() -> Result<(), hcaptcha_no_wasm::Error> {
 //! #   let secret = "0x123456789abcde0f123456789abcdef012345678".to_string();
 //! #   let captcha = Captcha::new(&random_response())?
 //! #       .set_remoteip(&mockd::internet::ipv4_address())?
@@ -51,7 +51,7 @@
 //!     println!("\tScore: {:?}\n\tReasons: {:?}", score, score_reasons);
 //!     # Ok(())
 //! # }
-//! # use hcaptcha::Captcha;
+//! # use hcaptcha_no_wasm::Captcha;
 //! # use rand::distributions::Alphanumeric;
 //! # use rand::{thread_rng, Rng};
 //! # use std::iter;
@@ -82,7 +82,7 @@
 //! #         #[derive(Error, Debug)]
 //! #         pub enum ContactError {
 //! #             #[error("{0}")]
-//! #             Hcaptcha(#[from] hcaptcha::Error),
+//! #             Hcaptcha(#[from] hcaptcha_no_wasm::Error),
 //! #             #[error("{0}")]
 //! #             Json(#[from] serde_json::Error),
 //! #         }
@@ -156,7 +156,7 @@
 //!
 //! #     const HCAPTCHA_SECRET: &str = "/hcaptcha/secret";
 //! #
-//! #     use hcaptcha::{Captcha, Client, Request};
+//! #     use hcaptcha_no_wasm::{Captcha, Client, Request};
 //! #     use lambda_runtime::{Context, Error};
 //! #     use send::ContactForm;
 //! #     use serde::{Deserialize, Serialize};
@@ -204,7 +204,7 @@
 //!
 //!         let request = Request::new(&hcaptcha_secret,
 //!             captcha)?;
-//!         
+//!
 //!         let client = Client::new();
 //!         let _response = client.verify_client_response(request).await?;
 //!
@@ -265,7 +265,7 @@
 //!
 //! ```toml
 //! [dependency]
-//! hcaptcha = { version = "3.0.0", default-features = false }
+//! hcaptcha-no-wasm = { version = "3.0.0", default-features = false }
 //! ```
 //!
 //! The following feature flags are available:

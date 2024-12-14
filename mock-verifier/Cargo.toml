@@ -10,5 +10,5 @@ chrono.workspace = true
 rocket.workspace = true
 serde.workspace = true
 serde_json.workspace = true
-hcaptcha = { path = "../hcaptcha", features = ["enterprise"] }
+hcaptcha-no-wasm = { path = "../hcaptcha-no-wasm", features = ["enterprise"] }
 serde_urlencoded.workspace = true

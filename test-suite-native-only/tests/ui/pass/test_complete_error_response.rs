@@ -1,6 +1,6 @@
 mod helper;
 
-use hcaptcha::{Code, Hcaptcha};
+use hcaptcha_no_wasm::{Code, Hcaptcha};
 use serde_json::json;
 use wiremock::matchers::{body_string, method, path};
 use wiremock::{Mock, MockServer, ResponseTemplate};
@@ -59,7 +59,7 @@ async fn main() {
 
     if let Err(response) = response {
         match response {
-            hcaptcha::Error::Codes(hash_set) => {
+            hcaptcha_no_wasm::Error::Codes(hash_set) => {
                 assert_eq!(hash_set.len(), 2);
                 assert!(hash_set.contains(&Code::MissingSecret));
                 assert!(hash_set.contains(&Code::Unknown("foo".to_owned())));

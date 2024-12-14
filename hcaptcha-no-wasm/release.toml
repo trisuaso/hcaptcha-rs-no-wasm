@@ -7,6 +7,6 @@ pre-release-replacements = [
     { file = "CHANGELOG.md", search = "## \\[Unreleased\\]", replace = "## [{{version}}] - {{date}}", exactly = 1 },
     { file = "CHANGELOG.md", search = "\\[Unreleased\\]:", replace = "[{{version}}]:", exactly = 1 },
     { file = "CHANGELOG.md", search = "\\.\\.\\.HEAD", replace = "...{{tag_name}}", exactly = 1 },
-    { file = "README.md", search = "hcaptcha = .*", replace = "{{crate_name}} = \"{{version}}\"" },
+    { file = "README.md", search = "hcaptcha-no-wasm = .*", replace = "{{crate_name}} = \"{{version}}\"" },
     { file = "src/lib.rs", search = "version = .+,", replace = "version = \"{{version}}\",", exactly = 1 },
 ]

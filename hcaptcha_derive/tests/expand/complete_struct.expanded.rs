@@ -36,10 +36,10 @@ impl Hcaptcha for ContactForm {
         uri: Option<String>,
     ) -> std::pin::Pin<
         Box<
-            dyn std::future::Future<Output = Result<hcaptcha::Response, hcaptcha::Error>>,
+            dyn std::future::Future<Output = Result<hcaptcha_no_wasm::Response, hcaptcha_no_wasm::Error>>,
         >,
     > {
-        let mut client = hcaptcha::Client::new();
+        let mut client = hcaptcha_no_wasm::Client::new();
         if let Some(u) = uri {
             match client.set_url(&u) {
                 Ok(c) => client = c,
@@ -50,14 +50,14 @@ impl Hcaptcha for ContactForm {
         }
         #[allow(unused_mut)]
         let mut captcha;
-        match hcaptcha::Captcha::new(&self.token) {
+        match hcaptcha_no_wasm::Captcha::new(&self.token) {
             Ok(c) => captcha = c,
             Err(e) => {
                 return Box::pin(async { Err(e) });
             }
         };
         let request;
-        match hcaptcha::Request::new(&secret, captcha) {
+        match hcaptcha_no_wasm::Request::new(&secret, captcha) {
             Ok(r) => request = r,
             Err(e) => {
                 return Box::pin(async { Err(e) });

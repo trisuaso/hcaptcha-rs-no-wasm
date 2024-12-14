@@ -1,4 +1,4 @@
-use hcaptcha::Hcaptcha;
+use hcaptcha_no_wasm::Hcaptcha;
 // use hcaptcha_derive::Hcaptcha;
 
 #[derive(Hcaptcha)]

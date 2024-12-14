@@ -4,7 +4,7 @@ mod record;
 mod send;
 mod validate;
 
-use hcaptcha::Captcha;
+use hcaptcha_no_wasm::Captcha;
 use lambda_runtime::{Error, LambdaEvent};
 use send::ContactForm;
 use serde::{Deserialize, Serialize};

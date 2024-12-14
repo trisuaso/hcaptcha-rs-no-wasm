@@ -1,7 +1,7 @@
 use clap::Parser;
 use cli::Cli;
 use color_eyre::Result;
-use hcaptcha::{Captcha, Client, Request, Response};
+use hcaptcha_no_wasm::{Captcha, Client, Request, Response};
 
 mod cli;
 

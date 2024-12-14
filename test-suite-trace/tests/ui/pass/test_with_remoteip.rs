@@ -2,7 +2,7 @@ mod helper;
 
 use chrono::{TimeDelta, Utc};
 use claims::assert_ok;
-use hcaptcha::Hcaptcha;
+use hcaptcha_no_wasm::Hcaptcha;
 use serde_json::json;
 use wiremock::matchers::{body_string, method, path};
 use wiremock::{Mock, MockServer, ResponseTemplate};

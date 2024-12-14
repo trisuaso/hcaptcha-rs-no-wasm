@@ -1,5 +1,5 @@
 [package]
-name = "hcaptcha"
+name = "hcaptcha-no-wasm"
 description = """
 hCaptcha client response verification. Validate the hCaptcha response submitted from to your server from the client.
 """
@@ -43,7 +43,7 @@ thiserror.workspace = true
 tracing = { workspace = true, optional = true }
 uuid.workspace = true
 url.workspace = true
-# tokio.workspace = true
+tokio.workspace = true
 
 [dev-dependencies]
 chrono.workspace = true
@@ -54,7 +54,7 @@ itertools.workspace = true
 lambda_runtime.workspace = true
 log.workspace = true
 rand.workspace = true
-tokio.workspace = true
+tokio = { workspace = true, features = ["rt-multi-thread"] }
 simple_logger.workspace = true
 tracing.workspace = true
 tracing-appender.workspace = true
@@ -68,6 +68,3 @@ serde_test = "1.0.177"
 [package.metadata.docs.rs]
 all-features = true
 rustdoc-args = ["--cfg", "docsrs"]
-
-[target.'cfg(target_arch = "wasm32")'.dependencies]
-uuid = { workspace = true, features = ["js"] }

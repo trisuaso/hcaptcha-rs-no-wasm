@@ -3,14 +3,14 @@
 #![cfg_attr(docsrs, feature(rustdoc_missing_doc_code_examples))]
 #![cfg_attr(docsrs, warn(rustdoc::invalid_codeblock_attributes))]
 
-//! Derive macro for hcaptcha::Hcaptcha
+//! Derive macro for hcaptcha_no_wasm::Hcaptcha
 //!
 //! Derives the Hcaptcha trait requirements for a struct such as in the example
 //! below of a contact form providing the hcaptcha response token, the
 //! client ip address of the client and the Hcaptcha service sitekey.
 //!
 //! ```rust
-//! use hcaptcha::Hcaptcha;
+//! use hcaptcha_no_wasm::Hcaptcha;
 //!
 //! #[derive(Hcaptcha)]
 //! pub struct ContactForm {
@@ -30,7 +30,7 @@
 //! The derive macro provides code such as the following:
 //!
 //!```rust
-//! # use hcaptcha::Hcaptcha;
+//! # use hcaptcha_no_wasm::Hcaptcha;
 //! #
 //! # pub struct ContactForm {
 //! #     name: String,
@@ -49,12 +49,12 @@
 //!     ) -> std::pin::Pin<
 //!         Box<
 //!             dyn std::future::Future<
-//!                     Output = Result<hcaptcha::Response,
-//!                                     hcaptcha::Error>,
+//!                     Output = Result<hcaptcha_no_wasm::Response,
+//!                                     hcaptcha_no_wasm::Error>,
 //!                                     >,
 //!         >,
 //!     > {
-//!         let mut client = hcaptcha::Client::new();
+//!         let mut client = hcaptcha_no_wasm::Client::new();
 //!         if let Some(u) = uri {
 //!             match client.set_url(&u) {
 //!                 Ok(c) => client = c,
@@ -65,7 +65,7 @@
 //!         };
 //!         #[allow(unused_mut)]
 //!         let mut captcha;
-//!         match hcaptcha::Captcha::new(&self.hcaptcha) {
+//!         match hcaptcha_no_wasm::Captcha::new(&self.hcaptcha) {
 //!             Ok(c) => captcha = c,
 //!             Err(e) => {
 //!                 return Box::pin(async { Err(e) });
@@ -84,7 +84,7 @@
 //!             }
 //!         };
 //!         let request;
-//!         match hcaptcha::Request::new(&secret, captcha) {
+//!         match hcaptcha_no_wasm::Request::new(&secret, captcha) {
 //!             Ok(r) => request = r,
 //!             Err(e) => {
 //!                 return Box::pin(async { Err(e) });
@@ -110,7 +110,7 @@ use syn::{Data, DataStruct, DeriveInput};
 /// # Example
 ///
 /// ```rust
-/// use hcaptcha::Hcaptcha;
+/// use hcaptcha_no_wasm::Hcaptcha;
 ///
 /// #[derive(Hcaptcha)]
 /// pub struct ContactForm {
@@ -150,8 +150,8 @@ fn impl_hcaptcha(ast: &DeriveInput) -> TokenStream {
 
     let gen = quote! {
         impl #impl_generics Hcaptcha for #name #ty_generics #where_clause {
-            fn valid_response(&self, secret: &str, uri: Option<String>) -> std::pin::Pin<Box<dyn std::future::Future<Output = Result<hcaptcha::Response, hcaptcha::Error>> >>  {
-                let mut client = hcaptcha::Client::new();
+            fn valid_response(&self, secret: &str, uri: Option<String>) -> std::pin::Pin<Box<dyn std::future::Future<Output = Result<hcaptcha_no_wasm::Response, hcaptcha_no_wasm::Error>> + Send>>  {
+                let mut client = hcaptcha_no_wasm::Client::new();
                 if let Some(u) = uri {
                         match client.set_url(&u)
                          {
@@ -166,7 +166,7 @@ fn impl_hcaptcha(ast: &DeriveInput) -> TokenStream {
                 #remoteip
                 #sitekey;
                 let request;
-                match hcaptcha::Request::new(&secret, captcha) {
+                match hcaptcha_no_wasm::Request::new(&secret, captcha) {
                     Ok(r) => request = r,
                     Err(e) => {
                         return Box::pin(async { Err(e) } );
@@ -235,7 +235,7 @@ fn get_required_attribute(
             quote! {
                 #[allow(unused_mut)]
                 let mut captcha;
-                match hcaptcha::Captcha::new(&self.#i) {
+                match hcaptcha_no_wasm::Captcha::new(&self.#i) {
                     Ok(c) => captcha = c,
                     Err(e) => {
                         return Box::pin(async{Err(e)});

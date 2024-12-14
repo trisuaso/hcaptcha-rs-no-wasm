@@ -4,13 +4,13 @@
 //! # Example
 //! Create Captcha struct from the body of JSON submitted as an event.
 //! ```no_run
-//!     use hcaptcha::Captcha;
+//!     use hcaptcha_no_wasm::Captcha;
 //! # #[derive(serde::Deserialize, serde::Serialize, Clone, Debug, Default)]
 //! # pub struct CustomEvent {
 //! #   body: Option<String>,
 //! # }
 //! # #[tokio::main]
-//! # async fn main() -> Result<(), hcaptcha::Error> {
+//! # async fn main() -> Result<(), hcaptcha_no_wasm::Error> {
 //! # let e = CustomEvent {
 //! #         body: Some("{\"response\":\"thisisthelonglistofcharactersthatformsaresponse\",\"remoteip\":\"10.10.20.10\"}".to_owned()),
 // //! #         body: None,
@@ -53,7 +53,7 @@ impl Captcha {
     /// # Example
     /// Create Captcha from response key.
     /// ```no_run
-    ///     use hcaptcha::Captcha;
+    ///     use hcaptcha_no_wasm::Captcha;
     /// # #[derive(serde::Deserialize, serde::Serialize, Clone, Debug, Default)]
     /// # struct CustomEvent {
     /// #   body: Option<String>,
@@ -68,7 +68,7 @@ impl Captcha {
     /// #   response: String,
     /// # }
     /// # #[tokio::main]
-    /// # async fn main() -> Result<(), hcaptcha::Error> {
+    /// # async fn main() -> Result<(), hcaptcha_no_wasm::Error> {
     /// # let e = CustomEvent {
     /// #         body: Some("{\"response\":\"thisisthelonglistofcharactersthatformsaresponse\",\"remoteip\":\"10.10.20.10\"}".to_owned()),
     // //! #         body: None,
@@ -117,7 +117,7 @@ impl Captcha {
     /// # Example
     ///
     /// ```no_run
-    ///     use hcaptcha::Captcha;
+    ///     use hcaptcha_no_wasm::Captcha;
     /// # use claims::assert_some;
     /// # #[derive(serde::Deserialize, serde::Serialize, Clone, Debug, Default)]
     /// # struct CustomEvent {
@@ -133,7 +133,7 @@ impl Captcha {
     /// #   response: String,
     /// # }
     /// # #[tokio::main]
-    /// # async fn main() -> Result<(), hcaptcha::Error> {
+    /// # async fn main() -> Result<(), hcaptcha_no_wasm::Error> {
     /// # let e = CustomEvent {
     /// #         body: Some("{\"response\":\"thisisthelonglistofcharactersthatformsaresponse\",\"remoteip\":\"10.10.20.10\"}".to_owned()),
     // //! #         body: None,
@@ -192,7 +192,7 @@ impl Captcha {
     /// # Example
     ///
     /// ```no_run
-    ///     use hcaptcha::Captcha;
+    ///     use hcaptcha_no_wasm::Captcha;
     /// # use claims::assert_some;
     /// # #[derive(serde::Deserialize, serde::Serialize, Clone, Debug, Default)]
     /// # struct CustomEvent {
@@ -208,7 +208,7 @@ impl Captcha {
     /// #   response: String,
     /// # }
     /// # #[tokio::main]
-    /// # async fn main() -> Result<(), hcaptcha::Error> {
+    /// # async fn main() -> Result<(), hcaptcha_no_wasm::Error> {
     /// # let e = CustomEvent {
     /// #         body: Some("{\"response\":\"thisisthelonglistofcharactersthatformsaresponse\",\"remoteip\":\"10.10.20.10\"}".to_owned()),
     // //! #         body: None,
@@ -262,7 +262,7 @@ impl Captcha {
     /// # Example
     ///
     /// ```no_run
-    ///     use hcaptcha::Captcha;
+    ///     use hcaptcha_no_wasm::Captcha;
     ///     let (response, captcha) = get_captcha();
     ///
     ///     assert_eq!(response, captcha.response().to_string());
@@ -317,10 +317,10 @@ impl Captcha {
     /// # Example
     ///
     /// ```no_run
-    ///     use hcaptcha::Captcha;
+    ///     use hcaptcha_no_wasm::Captcha;
     /// # use claims::assert_some;
     ///     let (remoteip, captcha) = get_captcha();
-    ///     
+    ///
     ///     let value = captcha.remoteip();
     ///     assert_some!(&value);
     ///
@@ -375,7 +375,7 @@ impl Captcha {
     /// # Example
     ///
     /// ```no_run
-    ///     use hcaptcha::Captcha;
+    ///     use hcaptcha_no_wasm::Captcha;
     /// # use claims::assert_some;
     ///     let (sitekey, captcha) = get_captcha();
     ///
